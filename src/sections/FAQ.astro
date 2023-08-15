@@ -1,0 +1,82 @@
+---
+import Question from '../components/question.astro';
+
+const {title} = Astro.props;
+
+---
+
+<section id="FAQ">
+    <img src="/ressources/images/FAQ.jpg" alt="3 petites figurines bleue, jaune et rouge tiennent des lettres FAQ en bois sur une table" class="">
+    <div class="section-container">
+        <h2 class="">{title}</h2>
+        <div class="questions-container">
+            <Question
+                numero="1"
+                question="Est-ce de la magie ?"
+                answer="L’hypnose est un outil parmi d’autres qui vous permet d’atteindre votre objectif. Ce qui compte, c’est votre motivation et l’alliance qui se crée entre vous et moi. Si vous pensez que l’hypnose peut vous « programmer » à faire quelque chose que vous ne voulez pas sincèrement faire, alors passez votre chemin."
+            />
+            <Question
+                numero="2"
+                question="Est-ce que je suis hypnotisable ?"
+                answer="Tout le monde vit ou peut apprendre à vivre des expériences hypnotiques. Certains y parviennent plus rapidement que d’autres et c’est normal car chacun à sa personnalité et vit l’expérience à travers celle-ci."
+            />
+            <Question
+                numero="3"
+                question="Est-ce que c’est comme à la télévision ?"
+                answer="Bien qu’il existe un socle commun aux deux pratiques, l’hypnose thérapeutique est différente de l’hypnose de spectacle. A la télévision, les participants sont choisis et acceptent consciemment de se laisser faire tout en sachant qu’ils vont être amenés à faire des choses drôles pour divertir le public. En accompagnement individuel, nous sommes focalisés sur votre objectif et pas sur celui de vous faire faire la poule… Cela dit, la pratique nous conduit à vous faire expérimenter des phénomènes hypnotiques."
+            />
+            <Question
+                numero="4"
+                question="Est-ce que je vais perdre le contrôle, être manipulé ?"
+                answer="Non, l’hypnose d’aujourd’hui fonctionne sur l’idée que vous êtes maître de vous-même et qu’au contraire concentrez sur votre personne, vous allez pouvoir reprendre la main sur une partie de vous qui vous échappe. Vous n’êtes pas obligé de dire ou faire des choses dont n’avez pas envie. Cela ne gêne en rien le travail thérapeutique. L’accompagnement que je vous propose va dans votre sens pour vous aider à réaliser votre objectif. Vous vous connaissez mieux que personne et je m’appuie sur vous pour que nous construisions ensemble votre chemin selon là où vous en êtes."
+            />
+            <Question
+                numero="5"
+                question="Est-ce que je vais être forcé à changer ?"
+                answer="Non, on ne force pas le changement mais je vous aide à agir sur votre inconscient à votre rythme en respectant qui vous êtes."
+            />
+            <Question
+                numero="6"
+                question="Combien de séances vont être nécessaires ?"
+                answer="L’Hypnose est connue pour être une « thérapie brève ». « Brève » ne veut pas dire expéditive. Parfois ça va très vite…parfois ça prend du temps et c’est normal. Je pars du principe qu’un minimum de trois séances est nécessaire. En effet, on ne change pas un comportement ancré depuis des années en un claquement de doigt. Vous l’aurez compris je ne suis pas adepte de l’arrêt du tabac en une séance même si je sais que cela est possible. Pour moi, il y a un travail plus profond de prise en compte de tout ce qui fait ce que vous êtes pour que la réalisation de votre objectif soit durable dans le temps."
+            />
+            <Question
+                numero="7"
+                question="Quelle fréquence ?"
+                answer="Tout dépend de votre objectif et de votre situation personnelle. Les séances peuvent être espacées de deux à trois semaines en début de suivi.  Il est possible d’allonger ce délai suivant l’avancée du travail. Cette question est abordée entre vous et moi en fin de séance."
+            />
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+    #FAQ {
+
+        margin: 10rem 0;
+
+        img {
+            width:100vw;
+            height: 50%;
+        }
+
+        h2, h6 {
+            text-align: center;
+        }
+
+        h2 {
+            margin: 3rem 20rem 5rem;
+            @media screen and (max-width: 45rem) {
+                margin: 0 5rem;
+            }
+        }
+
+        h6 {
+            text-transform: uppercase;
+            font-size: 2.5rem;
+        }
+
+        .questions-container {
+            margin: 3rem 0;
+        }
+    }
+</style>

@@ -1,0 +1,19 @@
+---
+interface Props {
+    idImage: string;
+	h2Title: string;
+    article: string;
+}
+
+const { idImage, h2Title, article } = Astro.props;
+---
+
+<section class="contenu-redactionnel section-container">
+    <div>
+        <div class="image" id={idImage}></div>
+        <h2>{h2Title}</h2>
+    </div>
+    <article>
+        <Fragment set:html={article}>
+    </article>
+</section>

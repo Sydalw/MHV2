@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/header.astro';
+import Thematiques from '../sections/thematiques.astro';
+import Quote from '../sections/quote.astro';
+import Testimonials from '../sections/testimonials.astro';
+import FAQ from '../sections/FAQ.astro';
+import Presentation from '../sections/presentation.astro';
+import Formulaire from '../sections/contact-form.astro';
+import Pricing from '../sections/pricing.astro';
+---
+
+<Layout title="Magalie VILLORA Hypnose">
+	<Header/>
+	<main>
+		<Thematiques/>
+		<Quote
+		id="quote2"
+		quote="Un coup de pouce est le bienvenu pour vous aider à vivre mieux !"
+		/>
+		<Testimonials/>
+		<Presentation
+			idName="pitch"
+			idAnimation="animated1"
+			h2Title="Bonjour et bienvenue !"
+			h3Title="Je m’appelle Magalie et je suis praticienne en Hypnose certifiée."
+			pText="<p>Assistante sociale de formation, cela fait 17 ans que j’accompagne des adultes, des familles et des enfants en difficulté.  </p><p>Parce que pour moi, il est important de s’épanouir  au travail,  j’ai choisi de continuer à exercer dans l’accompagnement  mais avec une approche différente, davantage centrée sur vous.  </p><p>J’ai à cœur de vous aider par l’hypnose à reprendre le contrôle sur tout ce qui peut vous empêcher de vivre sereinement votre vie.</p>"
+			buttonText="Mieux me connaitre"
+		/>
+		<Quote
+			id=""
+			quote="Nous vivons tous des évènements qui nous impactent. <br/>En général, on s’adapte, on digère mais parfois ça coince…"
+		/>
+		<Presentation
+			idName="vers-outil"
+			idAnimation="animated2"
+			h2Title="Il arrive un moment où agir devient une nécessité."
+			h3Title="L'hypnose contribue à soulager, réduire et/ou améliorer ce qui coince."
+			pText="<p></p>"
+			buttonText="En savoir plus"
+		/>
+		<FAQ
+			title="L'hypnose accessible pour tous"
+		/>
+		<Quote
+			id="quote3"
+			quote="Chacun a en lui tout le nécessaire pour trouver sa direction"
+		/>
+		<Pricing/>
+		<Formulaire
+			h4Title= "Une question, une demande de rendez-vous ? Contactez-moi, je vous répondrai rapidement.";
+			h5Title= "N’hésitez pas à me joindre directement au 07.82.90.54.86";
+			token= "9q5q9g54si05i7na3mm8074h";
+		/>
+	</main>
+</Layout>
+
+<style lang="scss">
+	
+</style>

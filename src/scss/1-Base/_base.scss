@@ -1,0 +1,71 @@
+@import "../2-Utils/variables";
+
+html {
+    font-size: $taille_police;
+    font-family: 'Josefin sans', 'Open sans', 'Roboto', 'Helvetica Neue', 'Comfortaa';
+    height: 1vh;
+}
+
+body {
+    background-color: var(--body-bg);
+}
+
+.box-sizer {
+    width: 108rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', 'acier', 'Playfair Display', serif !important;
+}
+
+h1 {
+    // font-family: "Alegreya sans", "Cardo", "acier", "Playfair Display", serif !important;
+    color: var(--h1-color);
+    font-size: clamp(4.5rem, 6vw, 10rem);
+    font-weight: 700;
+    font-style: italic;
+}
+
+h2 {
+    font-size: clamp(2.5rem, 3.5vw, 4.5rem);
+    color: var(--h2-color);
+}
+
+h3 {
+    font-size: clamp(2rem, 2.5vw, 3.5rem);
+    color: var(--h3-color);
+}
+
+h4 {
+    font-size: clamp(1.8rem, 1.5vw, 2.7rem);
+    color: var(--h4-color);
+}
+
+h5 {
+    font-size: clamp(1.6rem, 1.8vw, 3.5rem);
+    color: var(--h4-color);
+}
+
+h6 {
+    font-size: clamp(1.6rem, 1.3vw, 2.5rem);
+    color: var(--h4-color);
+}
+
+p {
+    font-family: 'Open sans', 'Roboto', 'Helvetica Neue', 'Comfortaa';
+    font-size: clamp(1.6rem, 1.6vw, 2rem);
+    color: var(--p-color);
+}
+
+#btn-fixed {
+    position: fixed;
+    bottom: 2rem;
+    right:2rem;
+}

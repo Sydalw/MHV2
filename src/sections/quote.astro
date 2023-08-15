@@ -1,0 +1,97 @@
+---
+interface Props {
+    id: string;
+	quote: string;
+}
+
+const { id, quote } = Astro.props;
+---
+
+<section class="quote" id={id}>
+    <div class="section-container">
+        <div class="carte-temoignage">
+            <span class="guillemet-ouvrant">
+                <svg class="svg-guillemet-ouvrant" viewBox="0 0 409.294 409.294" id="svg-6c4a">
+                    <path d="m0 204.647v175.412h175.412v-175.412h-116.941c0-64.48 52.461-116.941 116.941-116.941v-58.471c-96.728 0-175.412 78.684-175.412 175.412z"></path>
+                    <path d="m409.294 87.706v-58.471c-96.728 0-175.412 78.684-175.412 175.412v175.412h175.412v-175.412h-116.941c0-64.48 52.461-116.941 116.941-116.941z"></path>
+                </svg>
+            </span>
+            <p class="" set:html={quote} />
+            <span class="guillemet-fermant">
+                <svg class="svg-guillemet-fermant" viewBox="0 0 409.294 409.294" id="svg-daee">
+                    <path d="m0 204.647v175.412h175.412v-175.412h-116.941c0-64.48 52.461-116.941 116.941-116.941v-58.471c-96.728 0-175.412 78.684-175.412 175.412z"></path>
+                    <path d="m409.294 87.706v-58.471c-96.728 0-175.412 78.684-175.412 175.412v175.412h175.412v-175.412h-116.941c0-64.48 52.461-116.941 116.941-116.941z"></path>
+                </svg>
+            </span>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+    .quote {
+
+    background-color: var(--nav-bg);
+
+    &#quote2 {
+        background-color:var(--indian-red50);
+        .svg-guillemet-ouvrant {
+            fill:var(--cambridge-blue);
+        }
+        .svg-guillemet-fermant {
+            fill:var(--cambridge-blue);
+        }
+    }
+
+    &#quote3 {
+        background-color:var(--cambridge-blue50);
+        .svg-guillemet-ouvrant {
+            fill:var(--atomic-tangerine);
+        }
+        .svg-guillemet-fermant {
+            fill:var(--atomic-tangerine);
+        }
+    }
+
+    .section-container {
+        p {
+            font-weight: 700;
+            line-height: 1.7;
+            font-size: 3rem;
+            text-align: center;
+            margin: 0;
+            font-family: 'Lora';
+            font-style: italic;
+        }
+
+        .carte-temoignage {
+            margin: 0rem 15rem 5rem;
+            padding:3rem 0;
+            display: flex;
+            flex-direction: column;
+            @media screen and (max-width: 45rem) {
+                margin: 0 5rem 5rem;
+            }
+            
+        }
+            
+        .guillemet-ouvrant {
+
+        }
+        
+        .guillemet-fermant {
+            display: block;
+            align-self: end;
+        }
+        .svg-guillemet-ouvrant {
+            fill:var(--indian-red);
+            height:5rem;
+        }
+        
+        .svg-guillemet-fermant {
+            fill:var(--indian-red);
+            height:5rem;
+        }
+        
+    }
+}
+</style>

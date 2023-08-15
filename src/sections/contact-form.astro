@@ -1,0 +1,145 @@
+---
+interface Props {
+    h4Title: string;
+	h5Title: string;
+    token: string;
+}
+
+const { h4Title, h5Title, token } = Astro.props;
+---
+
+<section id="contact">
+    <div class="section-container contact-container">
+        <div class="form-title-container">
+            <h4>{h4Title}</h4>
+            <h5>{h5Title}</h5>
+        </div>
+        <div class="formulaire_formContainer" id="animatedForm">
+            <form action="https://postmail.invotes.com/send" method="post" id="email_form" class="formulaire">
+                <input type="hidden" name="access_token" value={token} />
+                  <!-- return urls can be fully qualified -OR-
+                    start with / for root relative -OR-
+                    start with . for url relative --> 
+                <!--<input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
+                <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />-->
+                
+                <input type="hidden" name="success_url" value="http://127.0.0.1:5500/Reworked/index.html" />
+                <input type="hidden" name="error_url" value="http://127.0.0.1:5500/Reworked/index.html" />
+
+                <input type="text" name="extra_name" placeholder="Votre nom*" required="required"/>
+                <!-- set the reply-to address -->
+                <input type="text" name="reply_to" placeholder="Votre email*" required="required"/>
+
+                <!-- to append extra fields, use the extra_ prefix.
+                    Entries will be appended to your message body. -->
+                <input type="text" name="extra_phone_number" placeholder="Votre téléphone" />
+
+                <!-- to split your message into 160 chars
+                    for an sms gateway -->
+                <!-- <input type="hidden"
+                            name="sms_format" value="true" /> -->
+
+                <textarea name="text" placeholder="Message*" required="required"></textarea>
+              
+                <input class="submit_form button btn" id="submit_form" type="submit" value="Envoyer">
+                </input>
+                <!-- not required, but we'd appreciate it if you'd link to us somewhere on your site -->
+              </form>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+    #contact {
+        background-image: linear-gradient(0deg,rgba(0,0,0,.15),rgba(0,0,0,.15)),url("../ressources/images/bureau.webp");
+        height:86rem;
+        width:100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+
+        .contact-container {
+            height: 100%;
+            width:100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: auto;    
+            
+            .form-title-container {
+                background-image: linear-gradient(0deg,rgba(0,0,0,.55),rgba(0,0,0,.55));
+                width:100%;
+                h4, h5 {
+                    text-align: center;
+                    color:#fff;
+                    text-transform: uppercase;
+                }
+            }
+
+            .formulaire_formContainer {
+                position:relative;
+                background-color: #fff;
+                padding: 5rem;
+                border-radius: 5rem;
+                width: 50%;
+                justify-content: center;
+
+                @media screen and (max-width: 108rem) {
+                    margin: 5rem;
+                }
+
+                @media screen and (max-width: 65rem) {
+                    width: 85%;
+                    padding: 3rem;
+                }
+                .formulaire {
+                    display: flex;
+                    flex-direction: column;
+                
+                    input {
+                        margin: 2rem 0;
+
+                        &[type="text"] {
+                            height: 5rem;
+                            padding-left: 1rem;
+                            font-size: 1.4rem;
+
+                            &::placeholder {
+                                font-family: 'Helvetica Neue', 'Comfortaa';
+                                font-size: 1.4rem;
+                            } 
+                
+                            &:focus {
+                                outline: none;
+                                border: 3px solid var(--p-spanned-color);
+                            }
+                        }
+                
+                        &[type="submit"] {
+                            border: none;
+                            margin:0 auto;
+                        }
+                    }
+                
+                    textarea {
+                        margin: 2rem 0;
+                        height: 20rem;
+                        outline: none;
+                        padding: 1rem 0 0 1rem;
+                        font-size: 1.4rem;
+                
+                        &::placeholder {
+                            font-family: 'Helvetica Neue', 'Comfortaa';
+                            font-size: 1.4rem;
+                        } 
+                        &:focus {
+                            outline: none;
+                            border: 3px solid var(--p-spanned-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+</style>

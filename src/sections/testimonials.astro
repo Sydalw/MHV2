@@ -1,0 +1,141 @@
+---
+import Slide from '../components/slide.astro';
+---
+
+<section id="testimonials">
+    <h2>Merci pour votre confiance !</h2>
+    <input type="radio" name="switch" id="i_1" checked>
+    <input type="radio" name="switch" id="i_2">
+    <input type="radio" name="switch" id="i_3">
+    <input type="radio" name="switch" id="i_4">
+    <input type="radio" name="switch" id="i_5">
+    <input type="radio" name="switch" id="i_6">
+    <input type="radio" name="switch" id="i_7">
+    <input type="radio" name="switch" id="i_8">
+    <div class="wrapper">
+        <Slide
+            className="content1"
+            name="Valérie Nazaris"
+            date="Mai 2023"
+            rating="5"
+            comment="Je suis accompagnée par Magalie VILLORA depuis le mois de décembre 2022. J'avais des appréhensions sur l'hypnose mais j'avais déjà épuisé les autres techniques de médecines douces et alternatives et je n'avais pas eu de résultats. Dès la première séance avec Magalie VILLORA, j'ai eu des résultats et les changements ont commencé à opérer dans mon corps et dans ma tête. Je suis pleinement satisfaite. Magalie VILLORA est une personne accueillante, bienveillante et à l'écoute des besoins. Elle fait preuve d'une grande capacité d'analyse et les compétences de cette praticienne sont indéniables. Accordez lui votre confiance vous n'en tirerez que des bénéfices et du bien-être."
+        />
+        <Slide
+            className="content2"
+            name="Jeanne Coignard"
+            date="Mai 2023"
+            rating="5"
+            comment="Les séances avec Magalie m’aident beaucoup à gérer le stress pour mon bac ! Je la remercie beaucoup pour son travail !"
+        />
+        <Slide
+            className="content3"
+            name="Laura E-L"
+            date="Novembre 2022"
+            rating="5"
+            comment="J'ai rencontré Madame VILLORA dans le cadre de plusieurs consultations afin de comprendre et traiter ma peur irraisonnée du sang. Les effets de la thérapie ont été ressentis dés la première séance. Aujourd'hui, je me sens beaucoup plus sereine. Magalie VILLORA est très professionnelle, d'une grande gentillesse et douée d'empathie. Encore merci"
+        />
+        <Slide
+            className="content4"
+            name="Sandra L"
+            date="Novembre 2022"
+            rating="5"
+            comment="Magalie accompagne mon fils depuis quelques séances pour l aider à dépasser une difficulté qu il rencontre. Magalie est une professionnelle à l écoute, bienveillante qui a rapidement mis mon fils à l aise. Il a facilement pu se confier et ils ont défini ensemble les chemins qu ils allaient emprunter pour l aider à surmonter sa difficulté. Magalie donne des outils et des clefs pour que l enfant puisse trouver ses propres ressources pour surmonter son problème. En tant que parent, son accompagnement m a également permis de revisiter mes postures par rapport à la prise en charge de son problème. L accompagnement est en cours mais mon fils y trouve beaucoup de soutien. Je vous la recommande vivement, vous pouvez vous lancer les yeux fermés!"
+        />
+        <Slide
+            className="content5"
+            name="Sabrina L"
+            date="Octobre 2022"
+            rating="5"
+            comment="Nous y sommes allés pour mon conjoint suite a un accident qui l'a fortement marqué, Mr était septique mais est reparti apaisé après ce 1er rdv. Magalie est très professionnelle,  à l'écoute avec un brin d'humour très agréable. Merci. Alex et Sabrina."
+        />
+        <Slide
+            className="content6"
+            name="Stéphanie Bonafix"
+            date="Aout 2022"
+            rating="5"
+            comment="J'ai pris rdv pour trouver des solutions afin améliorer les relations entre ma fille (10 ans) et moi. Magalie nous a reçues et prises en charge toutes les 2 et après 2 séances, les résultats sont déjà au rendez-vous pour chacune, notre relation s'apaise jour après jour. Elle a su nous mettre en confiance et s'adapter facilement à nos besoins. Ma fille, au départ réticente, est maintenant largement convaincue et demandeuse et moi aussi. Je recommande!"
+        />
+        <Slide
+            className="content7"
+            name="Marianne D"
+            date="Aout 2022"
+            rating="5"
+            comment="Quinze jours se sont écoulés depuis mon rendez vous avec Magalie, la séance s'est déroulée dans la confiance et la bienveillance. Aujourd'hui, je ressens de la plénitude face à ce pourquoi j'ai demandé de l'aide. Merci beaucoup! A bientôt pour d'autres clés à trouver"
+        />
+        <Slide
+            className="content8"
+            name="Marine"
+            date="Mai 2022"
+            rating="5"
+            comment="Un grand merci pour ces séances , avec de très bons résultats."
+        />
+    </div>
+    <div class="controls">
+        <label for="i_1">⬤</label>
+        <label for="i_2">⬤</label>
+        <label for="i_3">⬤</label>
+        <label for="i_4">⬤</label>
+        <label for="i_5">⬤</label>
+        <label for="i_6">⬤</label>
+        <label for="i_7">⬤</label>
+        <label for="i_8">⬤</label>
+    </div>
+</section>
+
+<style lang="scss">
+    #testimonials {
+        display:flex;
+        flex-direction: column;
+
+        h2 {
+            text-align: center;
+            margin: 0 0 3rem;
+        }
+
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+            position: absolute;
+        }
+        .wrapper {
+            width: 75vw; /* unfortunately width has to be set to some hard value */
+            display: flex;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 3px 3px 20px #9E9E9E;
+        }
+        .controls {
+            margin: 2rem auto;
+
+            label {
+                color: #E0E0E0;
+                transition-duration: .6s;
+                cursor: pointer;
+            }
+        }
+        #i_1:checked ~ .wrapper .content1,
+        #i_2:checked ~ .wrapper .content2,
+        #i_3:checked ~ .wrapper .content3,
+        #i_4:checked ~ .wrapper .content4,
+        #i_5:checked ~ .wrapper .content5,
+        #i_6:checked ~ .wrapper .content6,
+        #i_7:checked ~ .wrapper .content7,
+        #i_8:checked ~ .wrapper .content8 {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #i_1:checked ~ .controls label[for="i_1"],
+        #i_2:checked ~ .controls label[for="i_2"],
+        #i_3:checked ~ .controls label[for="i_3"],
+        #i_4:checked ~ .controls label[for="i_4"],
+        #i_5:checked ~ .controls label[for="i_5"],
+        #i_6:checked ~ .controls label[for="i_6"],
+        #i_7:checked ~ .controls label[for="i_7"],
+        #i_8:checked ~ .controls label[for="i_8"] {
+            color: #424242;
+        }
+    }
+
+</style>
