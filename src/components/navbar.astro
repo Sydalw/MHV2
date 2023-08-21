@@ -17,14 +17,15 @@
             </label>
             <ul class="list-nav">
                 <li class="non-deroulant"><a href="./qui-suis-je.html">Qui suis-je</a></li>
-                <li class=""id="deroulant">Thématiques</li>
+                <li class="" id="deroulant">Thématiques
                     <ul class="sous-menu" id="sous-menu">
-                        <li><a href="./ados-enfants.html">Enfants & ados</a></li>
-                        <li><a href="./alim.html">Alimentation et poids</a></li>
-                        <li><a href="./emotions.html">Face à vos émotions</a></li>
-                        <li><a href="./situations-douloureuses.html">Situations douloureuses</a></li>
-                        <li><a href="./phobies.html">Phobies</a></li>
+                        <li class="sous-li"><a href="./ados-enfants.html">Enfants & ados</a></li>
+                        <li class="sous-li"><a href="./alim.html">Alimentation et poids</a></li>
+                        <li class="sous-li"><a href="./emotions.html">Face à vos émotions</a></li>
+                        <li class="sous-li"><a href="./situations-douloureuses.html">Situations douloureuses</a></li>
+                        <li class="sous-li"><a href="./phobies.html">Phobies</a></li>
                     </ul>
+                </li>
                 <li class="non-deroulant"><a href="./mes-outils.html">Hypnose et vous</a></li>
                 <li class="non-deroulant"><a href="./index.html#pricing">Tarifs & Contact</a></li>
             </ul>
@@ -35,11 +36,16 @@
 <script>
     const deroulant = document.getElementById("deroulant");
     const sousmenu = document.getElementById("sous-menu");
+    const boutonFermetureMenu = document.getElementById("navi");
     let classes = sousmenu.classList;
 
     deroulant.addEventListener("click", function () {
         sousmenu.classList.toggle("visible");
     });
+
+    boutonFermetureMenu.addEventListener("click", function () {
+        sousmenu.classList.remove("visible");
+    })
 </script>
 
 <style lang="scss">
@@ -106,9 +112,12 @@
                     position: relative;
                     width: auto;
                     
-                    &:hover {
+                    &:not(#deroulant):hover {
                         cursor: pointer;
                         color: var(--p-spanned-color);
+                    }
+                    &#deroulant:hover {
+                        cursor: pointer;
                     }
 
                     @media screen and (max-width: 65rem) {
@@ -117,12 +126,16 @@
                         margin-left: -4rem;
                         background-color: var(--nav-bg);
                         
-                        &:hover {
+                        &:not(#deroulant):hover {
                             cursor: pointer;
                             //background-color: var(--caribbean-current);
                             background-color: var(--p-spanned-color);
                             color:#fff;
                             border-bottom: 0;
+                        }
+                        &#deroulant:hover {
+                            cursor: pointer;
+                            background-color: var(--p-spanned-color);
                         }
                     }
                     a {
@@ -140,17 +153,17 @@
                         &:after {
                             content:"+";
                             position: absolute;
-                            right:2rem;
+                            right: 2rem;
                         }
                     }
 
                     @media screen and (min-width: 65rem ){
                         &:hover {
-                            &~.sous-menu{
-                                    display: flex;
-                                    flex-direction: column;
-                                }
+                            .sous-menu{
+                                display: flex;
+                                flex-direction: column;
                             }
+                        }
                     }
                 }
 
@@ -159,7 +172,7 @@
                     position: absolute;
                     z-index: 1000;
                     background-color: var(--nav-bg);
-                    margin-left: 14rem;
+                    //margin-left: 14rem;
 
                     &:hover {
                         display: flex;
@@ -167,7 +180,7 @@
                     }
             
                     li{
-                        width: 100%;
+                        width: 30rem;
                         text-align: left;
                         //margin-left: 10rem;
                         position: relative;
@@ -185,17 +198,26 @@
         }
 
         #sous-menu.visible {
-        @media screen and (max-width: 65rem) {
-            display:block;
-            position: static;
-            background-color: var(--nav-bg);
-            margin-left:-4rem;
-            width:calc(100% + 4rem);
-            margin-left: 0;
-            width: 100%;
-            margin-right: 10rem;
+            @media screen and (max-width: 65rem) {
+                display: block;
+                position: static;
+                margin: auto;
+                background-color: var(--nav-bg);
+
+                li {
+                    //left: -4rem;
+                    width:calc(100% + 4rem);
+                    margin:0;
+                    padding: 0;
+                }
+                &:after {
+                    position: absolute;
+                    content:"-";
+                    top:0;
+                    right:2rem;
+                }
+            }
         }
-    }
     .navigationCheckbox {
         display: none;
     }

@@ -5,11 +5,11 @@ interface Props {
 
 const { link } = Astro.props;
 ---
-<a href={link}>
+<form action={link} method="get">
     <button class="btn" id="btn-fixed">
         Me contacter
     </button>
-</a>
+</form>
 
 <style lang="scss">
 

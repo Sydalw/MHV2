@@ -23,16 +23,16 @@ const { h4Title, h5Title, token } = Astro.props;
                 <!--<input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
                 <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />-->
                 
-                <input type="hidden" name="success_url" value="http://127.0.0.1:5500/Reworked/index.html" />
-                <input type="hidden" name="error_url" value="http://127.0.0.1:5500/Reworked/index.html" />
+                <input type="hidden" name="success_url" value="./index.html" />
+                <input type="hidden" name="error_url" value="./index.html" />
 
                 <input type="text" name="extra_name" placeholder="Votre nom*" required="required"/>
                 <!-- set the reply-to address -->
                 <input type="text" name="reply_to" placeholder="Votre email*" required="required"/>
-
+                <input type="text" name="extra_phone_number" placeholder="Votre téléphone" />
+                <input type="text" name="subject" placeholder="Titre du message*" required="required"/>
                 <!-- to append extra fields, use the extra_ prefix.
                     Entries will be appended to your message body. -->
-                <input type="text" name="extra_phone_number" placeholder="Votre téléphone" />
 
                 <!-- to split your message into 160 chars
                     for an sms gateway -->
@@ -86,7 +86,7 @@ const { h4Title, h5Title, token } = Astro.props;
                 justify-content: center;
 
                 @media screen and (max-width: 108rem) {
-                    margin: 5rem;
+                    margin: 1rem;
                 }
 
                 @media screen and (max-width: 65rem) {
