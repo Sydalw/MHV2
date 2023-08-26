@@ -5,9 +5,10 @@ interface Props {
     h2Title: string;
 	h3Title: string;
     buttonText: string;
+    buttonLink: string;
 }
 
-const { idName, idAnimation, h2Title, h3Title, buttonText } = Astro.props;
+const { idName, idAnimation, h2Title, h3Title, buttonText , buttonLink} = Astro.props;
 ---
 
 <section class="grosse-carte" id={idName}>
@@ -28,7 +29,7 @@ const { idName, idAnimation, h2Title, h3Title, buttonText } = Astro.props;
                 <p>Assistante sociale de formation, cela fait 17 ans que j’accompagne des adultes, des familles et des enfants en difficulté.</p>
                 <p>Parce que pour moi, il est important de s’épanouir  au travail,  j’ai choisi de continuer à exercer dans l’accompagnement  mais avec une approche différente, davantage centrée sur vous.  </p>
                 <p>J’ai à cœur de vous aider par l’hypnose à reprendre le contrôle sur tout ce qui peut vous empêcher de vivre sereinement votre vie.</p>
-                <form action="./qui-suis-je.html" method="get">
+                <form action={buttonLink} method="get">
                     <button class="btn">
                         {buttonText}
                     </button>
