@@ -8,6 +8,7 @@ import FAQ from '../sections/FAQ.astro';
 import Presentation from '../sections/presentation.astro';
 import Formulaire from '../sections/contact-form.astro';
 import Pricing from '../sections/pricing.astro';
+const POSTMAIL_TOKEN = import.meta.env.POSTMAIL_TOKEN;
 
 ---
 
@@ -49,7 +50,7 @@ import Pricing from '../sections/pricing.astro';
 		<Formulaire
 			h4Title= "Une question, une demande de rendez-vous ? Contactez-moi, je vous répondrai rapidement.";
 			h5Title= "N’hésitez pas à me joindre directement au 07.82.90.54.86";
-			token= "laiyg7hf23q3c992tkbzomhx";
+			token= {POSTMAIL_TOKEN};
 		/>
 	</main>
 </Layout>
