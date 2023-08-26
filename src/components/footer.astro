@@ -1,10 +1,11 @@
 ---
+const API_KEY = import.meta.env.API_KEY;
 ---
 
 <footer>
     <iframe
     referrerpolicy="no-referrer-when-downgrade"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD4aIfm4rBQXaonDTEiw7hmBBXQ1VbNubo&q=1486+Houga+Mont+de+Marsan"
+    src=`https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=1486+Houga+Mont+de+Marsan`
     allowfullscreen>
     </iframe>
     <div class="bottom-bar">
