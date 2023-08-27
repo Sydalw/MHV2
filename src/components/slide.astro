@@ -37,16 +37,13 @@ let getStarCount = etoilePleine.repeat(Number(rating));
 
 <style lang="scss">
     .slide {
-        width: 0;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        height:auto;
 
         .content {
-            width: 75vw;
-            height: 100%; /* this is optional if you want every slide to have same height as the highest one */
-            padding: 30px;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity .6s;
-            max-height: 90vh;
+            width: 90%;
             overflow-y: auto;
 
             .box-top{
@@ -55,7 +52,6 @@ let getStarCount = etoilePleine.repeat(Number(rating));
                 align-items: center;
                 margin-bottom: 2rem;
                 
-            
                 .profile{
                     display: flex;
                     align-items: center;
@@ -63,6 +59,7 @@ let getStarCount = etoilePleine.repeat(Number(rating));
                     .name-user{
                         display: flex;
                         flex-direction: column;
+                        text-align: left;
             
                         strong{
                             color: #3d3d3d;
@@ -72,6 +69,7 @@ let getStarCount = etoilePleine.repeat(Number(rating));
                         span {
                             color: #979797;
                             font-size: 1.2rem;
+                            text-align: left;
                         }
                     }
                 }
@@ -81,8 +79,10 @@ let getStarCount = etoilePleine.repeat(Number(rating));
             }
             .client-comment {
                 p{
-                font-size: 1.6rem;
-                color: #4b4b4b;
+                    font-size: 1.6rem;
+                    color: #4b4b4b;
+                    text-align: justify;
+                    height:100%;
                 }
             }
         }
